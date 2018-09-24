@@ -3,15 +3,18 @@
      <!-- <div>this is a Home page</div> -->
      <!-- <router-link to="/Header">跳转到Header列表项</router-link> -->
      <home-header></home-header>
+     <home-swiper></home-swiper>
   </div>
 </template>
 
 <script>
 import HomeHeader from './components/Header'
+import HomeSwiper from './components/Swiper'
 export default{
   name: 'Home',
   components: {
-  	HomeHeader: HomeHeader
+  	'home-header': HomeHeader,
+  	'home-swiper': HomeSwiper
   }
 }
 </script>
