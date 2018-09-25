@@ -14,8 +14,12 @@
           <div class="inner-box">
             <div class="info-title">韶关丹霞山</div>
             <div class="info-comment">
-              <span>star</span>
-              <span>16382条评论</span>
+              <span class="iconfont icon-star">&#xe730;</span>
+              <span class="iconfont icon-star">&#xe730;</span>
+              <span class="iconfont icon-star">&#xe730;</span>
+              <span class="iconfont icon-star">&#xe730;</span>
+              <span class="iconfont">&#xe730;</span>
+              <span class="comment-num">16382条评论</span>
             </div>
             <div class="info-price">
               ￥95起
@@ -36,6 +40,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@import '~styles/variables.styl';
 div{
   box-sizing: border-box;
 }
@@ -107,20 +112,23 @@ div{
 .item-info .inner-box .info-comment{
   margin-top: .14rem;
   height: .34rem;
-  background-color: pink; 
 }
 
 .item-info .inner-box .info-comment .icon-star{
   color: #ffb436;
   line-height: .4rem;
-  font-size: .2rem;
+  font-size: .3rem;
+}
+
+.item-info .inner-box .info-comment .comment-num{
+  color: $lightTxtColor;
 }
 
 .item-info .inner-box .info-price{
   position: relative;
   margin-top: .22rem;
   color: #616161;
-  font-size: .24rem;
-  line-height: .4rem;
+  font-size: .34rem;
+  line-height: .6rem;
 }
 </style>
