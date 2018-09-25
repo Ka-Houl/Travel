@@ -1,6 +1,5 @@
 <template>
   <div class="header">
-     <!-- <div>this is a Header page</div> -->
      <div class="header-left">
        <span class="iconfont">&#xe624;</span>
      </div>
