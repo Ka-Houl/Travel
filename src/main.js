@@ -7,7 +7,7 @@ import App from './App'
 import router from './router'
 import 'styles/reset.css'
 import 'styles/border.css'
-import 'styles/iconfont.css'
+import 'styles/iconfont.css'   //引入图标
 import 'swiper/dist/css/swiper.css'
 
 

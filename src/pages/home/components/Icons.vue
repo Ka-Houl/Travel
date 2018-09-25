@@ -108,6 +108,11 @@ export default {
   height: 0;
   padding-bottom: 50%;
 }
+
+.icons-wrapper{
+  margin: .2rem 0;
+}
+
 .icons-wrapper >>> .swiper-pagination-bullet-active{
   background-color: orange  !important
 }
