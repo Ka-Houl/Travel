@@ -4,18 +4,15 @@
       周末去哪儿
     </div>
     <ul>
-      <li class="list-item" v-for='(item,index) of WeekendList' :key='index'>
+      <li class="list-item" v-for='(item,index) of weekendList' :key='index'>
         <div class="item-img">
           <img :src="item.imgUrl">
         </div>
         <div class="item-info">
           <div class="inner-box">
             <div class="info-title">{{item.title}}</div>
-            <!-- <div class="info-comment">{{item.comment}}</div> -->
             <div class="info-comment">
-              <span class="comment-num">{{item.commentNum}}</span>
-            </div>
-            <div class="info-price">
+              <span class="comment-info">{{item.comment}}</span>
             </div>
           </div>
         </div>
@@ -30,42 +27,30 @@ export default {
   name: 'HomeWeekend',
   data: function () {
     return{
-      WeekendList: [
+      weekendList: [
         {
           id: '0001',
           imgUrl: 'http://img1.qunarzz.com/sight/source/1510/ff/1adb78807877bb.jpg_r_640x214_4a2ed504.jpg',
-          tag: '可订明日',
           title: '韶关必游TOP5',
-          commentNum: '带你玩转山清水秀，民族风情浓厚的韶关',
-          price: '39',
-          district: '浈江区'
+          comment: '带你玩转山清水秀，民族风情浓厚的韶关',
         },
         {
           id: '0002',
           imgUrl: 'http://img1.qunarzz.com/sight/source/1511/f7/90c1c5f6f3dd59.jpg_r_640x214_3cb4974e.jpg',
-          tag: '可订明日',
           title: '河源必游TOP10',
-          commentNum: '走进客家古邑，感受万绿河源',
-          price: '209',
-          district: '乳源县'
+          comment: '走进客家古邑，感受万绿河源',
         },
         {
           id: '0003',
           imgUrl: 'http://img1.qunarzz.com/sight/source/1506/45/313877f3917dbe.jpg_r_640x214_1c113e46.jpg',
-          tag: '可订明日',
           title: '江门必游TOP10',
-          commentNum: '你不可错过的休闲度假之地',
-          price: '98',
-          district: '乳源县'
+          comment: '你不可错过的休闲度假之地',
         },
         {
           id: '0004',
           imgUrl: 'http://img1.qunarzz.com/sight/source/1505/4a/ac007012d54bd4.jpg_r_640x214_eefa6ade.jpg',
-          tag: '可订明日',
           title: '惠州必游TOP5',
-          commentNum: '毓秀山水，继续着四季轮回的交替',
-          price: '60',
-          district: '韶关丹霞山'
+          comment: '毓秀山水，继续着四季轮回的交替',
         },
       ]
     }
@@ -132,7 +117,7 @@ div{
   font-size: .3rem;
 }
 
-.item-info .inner-box .info-comment .comment-num{
+.item-info .inner-box .info-comment .comment-info{
   width: 100%;
   height: 0.2rem;
   color: $lightTxtColor;

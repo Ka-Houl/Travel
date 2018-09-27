@@ -8,8 +8,6 @@
       <li class="list-item" v-for='(item,index) of recommendList' :key='index'>
         <div class="item-img">
           <img :src="item.imgUrl">
-          <!-- <img src="http://img1.qunarzz.com/sight/p0/1601/e1/e19f8470b726162d90.water.jpg_200x200_adc73629.jpg"> -->
-
         </div>
         <div class="item-img-tag">{{item.tag}}</div>
         <div class="item-info">
