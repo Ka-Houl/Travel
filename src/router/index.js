@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/home/Home'
-import Header from '@/pages/home/components/Header'
+// import Header from '@/pages/home/components/Header'
+import City from '@/pages/city/City'
 
 Vue.use(Router)
 
@@ -13,9 +14,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/Header',
-      name: 'Header',
-      component: Header
+      path: '/city',
+      name: 'City',
+      component: City
     }
   ]
 })

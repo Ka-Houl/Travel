@@ -8,10 +8,12 @@
         <div class="kw">输入城市/景点/游玩主题</div>
      	<input type="text" class="header-input">
      </div>
-     <div class="header-right">
-       {{this.city}}
-       <span class="iconfont arrow-icon">&#xe6aa;</span>
-     </div>
+     <router-link to="city">
+	     <div class="header-right">
+	       {{this.city}}
+	       <span class="iconfont arrow-icon">&#xe6aa;</span>
+	     </div>
+     </router-link>
   </div>
 </template>
 
@@ -34,7 +36,7 @@ export default{
 
   .header{
     width: 100%;
-    height: 0.88rem;
+    height: $headerHt;
     color: #fff;
   	background-color: $bgColor;
   }
@@ -42,7 +44,7 @@ export default{
   .header .header-left{
     width: .8rem;
     height: 100%;
-  	line-height: 0.88rem;
+  	line-height: $headerHt;
   	justify-content: center;
   }
 
@@ -77,6 +79,7 @@ export default{
     height: 100%;
   	line-height: 0.88rem;
   	justify-content: center;
+  	color: #fff;
   } 
 
   .header .header-right .arrow-icon{
