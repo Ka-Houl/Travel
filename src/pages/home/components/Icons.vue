@@ -1,6 +1,6 @@
 <template>
   <div class="icons-wrapper">
-    <swiper  :options="swiperOption">
+    <swiper :options="swiperOption">
       <swiper-slide v-for='(page,index) of pages' :key='index'>
 		  	<div class="icon-box" v-for='item of page' :key='item.id'>
 		  		<div class="icon-img-box">
@@ -18,60 +18,11 @@
 <script type="text/javascript">
 export default {
 	name: 'HomeIcons',
+	props: {
+		iconsList: Array,
+	},
 	data: function () {
   	return {
-  		iconsList: [
-  		{ 
-  			id: '001',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        description: '景点门票',
-  		},
-   		{ 
-  			id: '002',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/97/02f5043b51b2102.png',
-        description: '丹霞山',
-  		},
-  		{ 
-  			id: '003',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/87/20656da0ac042002.png',
-        description: '玻璃栈道',
-  		},
-  		{ 
-  			id: '004',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/6a/45f595250c73d102.png',
-        description: '夏日玩水',
-  		},
-  		{ 
-  			id: '005',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/96/c70f1e85ae4a4f02.png',
-        description: '自然风光',
-  		},
-  		{ 
-  			id: '006',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png',
-        description: '水上乐园',
-  		},
-  		{ 
-  			id: '007',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/95/8d02011d149bdb02.png',
-        description: '汽车票',
-  		},
-  		{ 
-  			id: '008',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        description: '名胜古迹',
-  		},
-  		{ 
-  			id: '009',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/ab/6f7d6e44963c9302.png',
-        description: '温泉',
-  		},
-  		{ 
-  			id: '010',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/80/416c6ab3368d1f02.png',
-        description: '全部玩乐',
-  		}  		
- 		],
       swiperOption: {
         pagination: {
           el: '.swiper-pagination',
@@ -93,7 +44,6 @@ export default {
       	pages[page].push(item)  //把每个iconpush进去页中
       })
       return pages
-
     }
   }
 }

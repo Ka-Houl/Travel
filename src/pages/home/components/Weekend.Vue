@@ -25,37 +25,9 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data: function () {
-    return{
-      weekendList: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/source/1510/ff/1adb78807877bb.jpg_r_640x214_4a2ed504.jpg',
-          title: '韶关必游TOP5',
-          comment: '带你玩转山清水秀，民族风情浓厚的韶关',
-        },
-        {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/sight/source/1511/f7/90c1c5f6f3dd59.jpg_r_640x214_3cb4974e.jpg',
-          title: '河源必游TOP10',
-          comment: '走进客家古邑，感受万绿河源',
-        },
-        {
-          id: '0003',
-          imgUrl: 'http://img1.qunarzz.com/sight/source/1506/45/313877f3917dbe.jpg_r_640x214_1c113e46.jpg',
-          title: '江门必游TOP10',
-          comment: '你不可错过的休闲度假之地',
-        },
-        {
-          id: '0004',
-          imgUrl: 'http://img1.qunarzz.com/sight/source/1505/4a/ac007012d54bd4.jpg_r_640x214_eefa6ade.jpg',
-          title: '惠州必游TOP5',
-          comment: '毓秀山水，继续着四季轮回的交替',
-        },
-      ]
-    }
+  props: {
+    weekendList: Array,
   }
-
 }
 </script>
 

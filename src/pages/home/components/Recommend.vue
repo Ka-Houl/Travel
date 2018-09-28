@@ -36,49 +36,9 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data: function () {
-    return{
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1601/e1/e19f8470b726162d90.water.jpg_200x200_adc73629.jpg',
-          tag: '可订明日',
-          title: '韶关丹霞山',
-          commentNum: '5750',
-          price: '39',
-          district: '浈江区'
-        },
-        {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1505/a4/a4b1bc5a3cc3c106.water.jpg_200x200_7d16ab94.jpg',
-          tag: '可订明日',
-          title: '云门山水上乐园',
-          commentNum: '350',
-          price: '209',
-          district: '乳源县'
-        },
-        {
-          id: '0003',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1711/9d/9da3e124fdcfd8c3a3.img.jpg_200x200_7f4ad548.jpg',
-          tag: '可订明日',
-          title: '韶关云门山',
-          commentNum: '1242',
-          price: '98',
-          district: '乳源县'
-        },
-        {
-          id: '0004',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1509/67/675bed756b42a5ab.water.jpg_200x200_4c5c4019.jpg',
-          tag: '可订明日',
-          title: '水上丹霞',
-          commentNum: '222',
-          price: '60',
-          district: '韶关丹霞山'
-        },
-      ]
-    }
+  props:{
+    recommendList: Array,
   }
-
 }
 </script>
 

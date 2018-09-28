@@ -2,11 +2,11 @@
   <div class="header">
      <!-- <div>this is a Home page</div> -->
      <!-- <router-link to="/Header">跳转到Header列表项</router-link> -->
-     <home-header></home-header>
-     <home-swiper></home-swiper>
-     <home-icons></home-icons>
-     <home-recommend></home-recommend>
-     <home-weekend></home-weekend>
+     <home-header :city="city"></home-header>
+     <home-swiper :swiperList="swiperList"></home-swiper>
+     <home-icons :iconsList="iconsList"></home-icons>
+     <home-recommend :recommend-list="recommendList"></home-recommend>
+     <home-weekend :weekend-list="weekendList"></home-weekend>
   </div>
 </template>
 
@@ -26,17 +26,36 @@ export default{
   	'home-recommend': HomeRecommend,
   	'home-weekend': HomeWeekend,
   },
+  data: function () {
+     return{
+     	city: '',
+     	swiperList: [],
+     	iconsList: [],
+     	recommendList: [],
+     	weekendList:[]
+
+     }
+  },
   methods: {
   	getHomeInfo: function () {
       axios.get('/api/index.json').then(this.getHomeInfoSuccess)
   	},
   	getHomeInfoSuccess: function (res) {
-  		console.log(res)
+  		console.log(res);
+  		var odata = res.data.data
+  		if(res.data.ret && res.data.data) {
+          this.city = odata.city;
+          this.swiperList = odata.swiperList;
+          this.iconsList = odata.iconsList;
+          this.recommendList = odata.recommendList;
+          this.weekendList = odata.weekendList
+  		}
   	}
   },
   mounted: function () {
-  	this.getHomeInfo()
-  }
+  	this.getHomeInfo();
+  },
+
 }
 </script>
 
