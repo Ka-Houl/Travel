@@ -1,5 +1,5 @@
 <template>
-	<div class="list">
+	<div class="list" ref="listWrapper">
 		<div>
 			<div class="hot-cities">
 			  <div class="hot-cts-title">热门城市</div>
@@ -120,14 +120,28 @@
 </template>
 
 <script type="text/javascript">
+  import BScroll from 'better-scroll'
 	export default {
-		name: 'CityList'
+		name: 'CityList',
+		mounted: function () {
+      var scroll = new BScroll(this.$refs.listWrapper)
+      //this.$refs.listWrapper直接获取DIV元素
+		}
 	}
 </script>
 
 <style lang="stylus" scoped>
 div{
 	box-sizing: border-box;
+}
+
+.list{
+	position: absolute;
+	top: 0.88rem;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
 }
 
 .clearfix::after{
