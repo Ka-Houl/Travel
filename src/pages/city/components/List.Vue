@@ -4,7 +4,10 @@
 			<div class="hot-cities">
 			  <div class="hot-cts-title">热门城市</div>
         <ul class="clearfix">
-          <li v-for="item in computedCities"  :key=item.id :class="item.borderType">
+          <li v-for="item in computedCities"  
+              :key=item.id 
+              :class="item.borderType"
+              @click="handleCityClick(item.name)">
           	{{item.name}}
           </li>
         </ul>
@@ -15,15 +18,17 @@
 						<li v-for="(item,index) in letters" :key="index" @click="handleLetterClick">{{item}}</li>
 					</ul>
 			</div>
-			<div class="alphabet-list" v-for="(itemList, key) in cities" :key="key" :ref="key">
+			<div class="alphabet-list" 
+			     v-for="(itemList, key) in cities" 
+			     :key="key" 
+			     :ref="key">
 			  <!-- :ref注册引用信息 -->
-        <!-- <div class="alphabet-list-title">{{Array.prototype.indexOf.call(cities,key)}}</div> -->
         <div class="alphabet-list-title">{{key}}</div>
         <ul class="clearfix">
-        	<li v-for="item in itemList">{{item.name}}</li>
+        	<li v-for="item in itemList" 
+        	@click="handleCityClick(item.name)">{{item.name}}</li>
         </ul>
 			</div>
-
 		</div>
 	</div>
 </template>
@@ -44,6 +49,13 @@
 		methods: {
 			handleLetterClick: function (e) {
 				this.letter = e.target.innerText;
+			},
+			handleCityClick: function (e) {
+				this.$store.state.city = e;
+				// this.$store.dispatch('changeCityName', e)
+				this.$router.push({
+					name: "Home"
+				})
 			}
 		},
 		watch: {    
@@ -84,16 +96,15 @@
 				}
 				return result;
 			},
-
 		},
 		mounted: function () {
       this.scroll = new BScroll(this.$refs.listWrapper)
 			// console.log(typeof(this.$refs))
       //this.$refs.listWrapper直接获取DIV元素
 		},
-		updated: function () {
-			// console.log(this.$refs)
-		}
+		// updated: function () {
+		// 	console.log(this.$refs)
+		// }
 	}
 </script>
 

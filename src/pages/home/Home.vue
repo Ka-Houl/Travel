@@ -16,7 +16,7 @@ import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/Icons'   
 import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/Weekend'
-import axios from 'axios'
+import axios from 'axios'   //获取数据
 export default{
   name: 'Home',
   components: {
@@ -41,7 +41,7 @@ export default{
       axios.get('/api/index.json').then(this.getHomeInfoSuccess)
   	},
   	getHomeInfoSuccess: function (res) {
-  		console.log(res);
+  		// console.log(res);
   		var odata = res.data.data
   		if(res.data.ret && res.data.data) {
           this.city = odata.city;

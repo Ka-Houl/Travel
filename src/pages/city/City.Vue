@@ -28,7 +28,7 @@ export default{
   	},
   	getCityInfoSuccess: function (res) {
   		// console.log(res);
-  		var data = res.data.data
+  		var data = res.data.data;
   		if(res.data.ret && res.data.data) {
           this.cities = data.cities;
           this.hotCities = data.hotCities;

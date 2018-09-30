@@ -5,6 +5,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'   //引入轮播图
 import FastClick from 'fastclick'
 import App from './App'
 import router from './router'
+import store from './store/index.js'
 import 'styles/reset.css'
 import 'styles/border.css'
 import 'styles/iconfont.css'   //引入图标
@@ -19,6 +20,7 @@ Vue.use(VueAwesomeSwiper)
 new Vue({
   el: '#app',
   router,
+  store: store,
   components: { App },
   template: '<App/>'
 })

@@ -10,7 +10,7 @@
      </div>
      <router-link to="city">
 	     <div class="header-right">
-	       {{this.city}}
+	       {{this.$store.state.city}}
 	       <span class="iconfont arrow-icon">&#xe6aa;</span>
 	     </div>
      </router-link>
@@ -75,7 +75,8 @@ export default{
   }
 
   .header .header-right{
-    width: 1.32rem;
+    min-width: 1.12rem;
+    padding:  0 .1rem;
     height: 100%;
   	line-height: 0.88rem;
   	justify-content: center;
