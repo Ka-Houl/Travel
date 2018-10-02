@@ -50,9 +50,10 @@
 			handleLetterClick: function (e) {
 				this.letter = e.target.innerText;
 			},
-			handleCityClick: function (e) {
-				this.$store.state.city = e;
+			handleCityClick: function (city) {
+				// this.$store.state.city = e;
 				// this.$store.dispatch('changeCityName', e)
+				this.$store.commit('changeCityName',city)
 				this.$router.push({
 					name: "Home"
 				})

@@ -22,7 +22,7 @@
 import { mapState } from 'vuex'
 export default{
   name: 'HomeHeader',
-  computed: {   //使得this.$store.state.city可以简写成this.city
+  computed: {   // 使得this.$store.state.city可以简写成this.city
   	...mapState({  
   		city: 'city'  
   	})
