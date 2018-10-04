@@ -1,19 +1,25 @@
 <template>
 	<div>
-	  <city-banner></city-banner>
+	  <detail-banner></detail-banner>
+	  <detail-header></detail-header>
+	  <div class="content-box"></div>
 	</div>
 </template>
 
 <script type="text/javascript">
-import CityBanner from './components/Banner'
-	export default {
-		name: 'CityDetail',
-	  components: {
-	  	'city-banner': CityBanner,
-	  },	
-	}
+import DetailBanner from './components/Banner'
+import DetailHeader from './components/Header'
+export default {
+	name: 'CityDetail',
+  components: {
+  	'detail-banner': DetailBanner,
+  	'detail-header': DetailHeader
+  },	
+}
 </script>
 
 <style lang="stylus" scoped>
-	
+  .content-box{
+  	height:45rem;
+  }
 </style>
