@@ -25,7 +25,9 @@ export default {
   data: function () {
   	return {
       swiperOption: {
-        pagination:  '.swiper-pagination',
+        pagination: {
+          el: '.swiper-pagination',
+        },
         loop: true,   // 这里设置true也不能循环播放？？
         keyboard : true,
       },

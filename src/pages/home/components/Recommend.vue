@@ -5,29 +5,34 @@
       猜你喜欢
     </div>
     <ul>
-      <li class="list-item" v-for='(item,index) of recommendList' :key='index'>
-        <div class="item-img">
-          <img :src="item.imgUrl">
-        </div>
-        <div class="item-img-tag">{{item.tag}}</div>
-        <div class="item-info">
-          <div class="inner-box">
-            <div class="info-title">{{item.title}}</div>
-            <div class="info-comment">
-              <span class="iconfont icon-star">&#xe730;</span>
-              <span class="iconfont icon-star">&#xe730;</span>
-              <span class="iconfont icon-star">&#xe730;</span>
-              <span class="iconfont icon-star">&#xe730;</span>
-              <span class="iconfont">&#xe730;</span>
-              <span class="comment-num">{{item.commentNum}}条评论</span>
-            </div>
-            <div class="info-price">
-              <span class="price">￥<em>{{item.price}}</em></span>起
-              <span class="district">{{item.district}}</span>
+      <router-link tag="li" 
+                   :to="'/detail/' + item.id"
+                   class="list-item" 
+                   v-for='(item) of recommendList' 
+                   :key='item.id'>
+          <div class="item-img">
+            <img :src="item.imgUrl">
+          </div>
+          <div class="item-img-tag">{{item.tag}}</div>
+          <div class="item-info">
+            <div class="inner-box">
+              <div class="info-title">{{item.title}}</div>
+              <div class="info-comment">
+                <span class="iconfont icon-star">&#xe730;</span>
+                <span class="iconfont icon-star">&#xe730;</span>
+                <span class="iconfont icon-star">&#xe730;</span>
+                <span class="iconfont icon-star">&#xe730;</span>
+                <span class="iconfont">&#xe730;</span>
+                <span class="comment-num">{{item.commentNum}}条评论</span>
+              </div>
+              <div class="info-price">
+                <span class="price">￥<em>{{item.price}}</em></span>起
+                <span class="district">{{item.district}}</span>
+              </div>
             </div>
           </div>
-        </div>
-      </li>
+        </li>        
+      </router-link>
     </ul>    
   </div>
 
