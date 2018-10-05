@@ -10,20 +10,29 @@
 				<div class="banner-title">{{this.sightName}}</div>
 			</div>
 		</div>
-		<common-gallery @closeGallery="this.handleGalleryClose"
+		<common-fade>
+			<common-gallery @closeGallery="this.handleGalleryClose"
+			                :imgsList="galleryImages"
+			                v-show="isGalleryShow">
+			                <!--@closeGallery是调用子组件传递过来的方法 -->
+			</common-gallery>			
+		</common-fade>
+<!-- 		<common-gallery @closeGallery="this.handleGalleryClose"
 		                :imgsList="galleryImages"
-		                v-show="isGalleryShow">
+		                v-show="isGalleryShow"> -->
 		                <!--@closeGallery是调用子组件传递过来的方法 -->
-		</common-gallery>
+		<!-- </common-gallery> -->
 	</div>
 </template>
 
 <script type="text/javascript">
 import CommonGallery from 'common/gallery/Gallery'
+import CommonFade from 'common/fade/Fade'
 export default {
 	name: 'DetailBanner',
 	components: {
 		'common-gallery': CommonGallery,
+		'common-fade': CommonFade
 	},
 	props: {
 		sightName: String,
