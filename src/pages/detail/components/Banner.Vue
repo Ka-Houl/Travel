@@ -1,18 +1,19 @@
 <template>
   <div>
 		<div class="banner" @click="handleBannerClick">
-			<img  class="banner-img" src="//img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_600x330_b5e86902.jpg">
+			<img  class="banner-img" :src="this.bannerImage">
 			<div class="banner-info">
 				<div class="banner-number">
 				  <span class="iconfont">&#xe653;</span>
-				  11
+				  {{galleryImages.length}}
 				</div>
-				<div class="banner-title">成都欢乐谷(AAAA景区)</div>
+				<div class="banner-title">{{this.sightName}}</div>
 			</div>
 		</div>
-		<common-gallery @closeGallery="handleGalleryClose"
-		                :imgsList="imgsList"
+		<common-gallery @closeGallery="this.handleGalleryClose"
+		                :imgsList="galleryImages"
 		                v-show="isGalleryShow">
+		                <!--@closeGallery是调用子组件传递过来的方法 -->
 		</common-gallery>
 	</div>
 </template>
@@ -23,6 +24,12 @@ export default {
 	name: 'DetailBanner',
 	components: {
 		'common-gallery': CommonGallery,
+	},
+	props: {
+		sightName: String,
+		bannerImage: String,
+    galleryImages: Array,
+
 	},
   data: function () {
     return{

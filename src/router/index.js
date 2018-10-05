@@ -23,5 +23,9 @@ export default new Router({
       name: 'Detail',
       component: Detail
     }    
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+  	// console.log(from)   //指向组件 to是点击的组件 from是前组件
+  	return {x: 0 , y: 0}
+  }
 })

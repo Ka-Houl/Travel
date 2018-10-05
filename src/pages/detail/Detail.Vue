@@ -1,9 +1,13 @@
 <template>
 	<div>
-	  <detail-banner></detail-banner>
+	  <detail-banner :sight-name="sightName"
+	                 :banner-image="bannerImage"
+	                 :gallery-images="galleryImages"
+	  >
+	  </detail-banner>
 	  <detail-header></detail-header>
 	  <div class="content-box">
-	  	<detail-list v-bind:list="list"></detail-list>
+	  	<detail-list v-bind:category-list="categoryList"></detail-list>
 	  </div>
 	</div>
 </template>
@@ -12,6 +16,8 @@
 import DetailBanner from './components/Banner'
 import DetailHeader from './components/Header'
 import DetailList from './components/List'
+import axios from 'axios'   //获取数据
+
 export default {
 	name: 'CityDetail',
   components: {
@@ -21,6 +27,10 @@ export default {
   },
   data: function () {
   	return {
+  		sightName: '',
+  		bannerImage: '',
+  		galleryImages: [],
+  		categoryList: [],
   		list: [{
   			title: '门票',
         children: [{
@@ -44,6 +54,24 @@ export default {
         	title: '景区直通车'
         }]
   	} 
+  },
+  methods: {
+  	getDetailInfo: function () {
+      axios.get('/api/detail.json?id=' + this.$route.params.id)
+      .then(this.getDetailInfoSuccess)
+      // console.log(this.$route.params)  //动态获取路由id配置项
+  	},
+  	getDetailInfoSuccess: function (res) {
+  		if(res.data.ret && res.data.data)
+  		var data = res.data.data;
+  		this.sightName = data.sightName;  //将json里的sightName赋值给组件里的sightName
+  		this.bannerImage = data.bannerImage;
+  		this.galleryImages = data.galleryImages;
+  		this.categoryList = data.categoryList;
+  	}
+  },
+  mounted: function () {
+  	this.getDetailInfo()
   }
 }
 </script>
