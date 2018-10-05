@@ -66,6 +66,7 @@ export default {
   	text-align: center;
   	border-radius: .4rem;
   	background-color: rgba(0, 0, 0, 0.6);
+  	z-index: 1
   }
 
   .header-back .icon-back{

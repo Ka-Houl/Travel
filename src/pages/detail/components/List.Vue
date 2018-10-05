@@ -8,7 +8,7 @@
 		    {{item.title}}
 		  </div>
 		  <div v-if="item.children" class="item-children">
-		  	<detail-list v-bind:list="item.children"></detail-list>
+		  	<detail-list v-bind:category-list="item.children"></detail-list>
 		  </div>
 		</div>
 	</div>
