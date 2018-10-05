@@ -9,7 +9,6 @@
 		  		<p class="icon-description">{{item.description}}</p>
 		  	</div>
 	  	</swiper-slide>
-
 	  	<div class="swiper-pagination"  slot="pagination"></div>
   	</swiper>
   </div>
@@ -29,7 +28,7 @@ export default {
         },
         loop: true,
         keyboard : true,
-      },
+      }
   	}
   },
   computed: {

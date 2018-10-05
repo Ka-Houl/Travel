@@ -17,11 +17,6 @@
 			                <!--@closeGallery是调用子组件传递过来的方法 -->
 			</common-gallery>			
 		</common-fade>
-<!-- 		<common-gallery @closeGallery="this.handleGalleryClose"
-		                :imgsList="galleryImages"
-		                v-show="isGalleryShow"> -->
-		                <!--@closeGallery是调用子组件传递过来的方法 -->
-		<!-- </common-gallery> -->
 	</div>
 </template>
 
@@ -37,8 +32,7 @@ export default {
 	props: {
 		sightName: String,
 		bannerImage: String,
-    galleryImages: Array,
-
+    galleryImages: Array
 	},
   data: function () {
     return{

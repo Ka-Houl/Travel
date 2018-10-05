@@ -10,7 +10,6 @@
 <script type="text/javascript">
 	export default {
 		name: 'CityHeader',
-
 	}
 </script>
 

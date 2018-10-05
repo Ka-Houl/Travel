@@ -27,10 +27,10 @@ export default {
 			}
 		}
 	},
-	activated: function () {
+	mounted: function () {
 		window.addEventListener('scroll',this.handleScroll)
 	},
-	deactivated: function () {
+	beforeDestroy: function () {
 		window.removeEventListener('scroll',this.handleScroll)
 	},   //离开当前页面的时候，解除事件监听
 	methods: {

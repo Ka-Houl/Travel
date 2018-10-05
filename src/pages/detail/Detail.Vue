@@ -13,6 +13,7 @@
 </template>
 
 <script type="text/javascript">
+
 import DetailBanner from './components/Banner'
 import DetailHeader from './components/Header'
 import DetailList from './components/List'
