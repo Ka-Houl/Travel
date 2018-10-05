@@ -55,7 +55,7 @@
 				// this.$store.dispatch('changeCityName', e)
 				this.$store.commit('changeCityName',city)
 				this.$router.push({
-					name: "Home"
+		      name: "Home"
 				})
 			}
 		},

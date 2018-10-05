@@ -82,6 +82,7 @@ export default {
   	background-color: $bgColor;
   	text-align: center;
   	color: #fff;
+  	z-index: 2
   }
 
   .header .header-left{
