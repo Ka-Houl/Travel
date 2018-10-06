@@ -99,7 +99,9 @@
 			},
 		},
 		mounted: function () {
-      this.scroll = new BScroll(this.$refs.listWrapper)
+      this.scroll = new BScroll(this.$refs.listWrapper, {
+      	click: true
+      })   //添加click: true，以防手机端的这个组件失效
 			// console.log(typeof(this.$refs))
       //this.$refs.listWrapper直接获取DIV元素
 		},
