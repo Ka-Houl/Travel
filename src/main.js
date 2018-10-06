@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import VueAwesomeSwiper from 'vue-awesome-swiper'   //引入轮播图
 import FastClick from 'fastclick'
+import 'babel-polyfill'
 import App from './App'
 import router from './router'
 import store from './store/index.js'

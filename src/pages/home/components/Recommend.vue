@@ -99,10 +99,9 @@ div{
 }
 
 .list-item .item-info{
-  float: left;
-  width: 5.1rem;
+  margin-left: 2.4rem;
   height: 2.4rem;
-  padding: 0.4rem;
+  padding: .4rem .1rem;
 }
 
 .item-info .inner-box{
